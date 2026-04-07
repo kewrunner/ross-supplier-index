@@ -1,7 +1,11 @@
 aid: ross-stores
-url: https://raw.githubusercontent.com/api-evangelist/ross-stores/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/ross-stores/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis: []
 common:
   - type: Website
     url: https://www.ross-stores.com
+description: >-
+  Ross Stores is the largest off-price apparel and home fashion chain in the United
+  States, operating Ross Dress for Less and dd's DISCOUNTS retail stores.
