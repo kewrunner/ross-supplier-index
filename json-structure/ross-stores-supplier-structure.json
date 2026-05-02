@@ -1,0 +1,56 @@
+{
+  "name": "RossStoresSupplierIntegration",
+  "description": "Data structures for Ross Stores supplier and vendor integration covering purchase orders, advance ship notices, item master data, and invoice transactions",
+  "fields": [
+    {
+      "name": "purchaseOrder",
+      "type": "object",
+      "description": "Ross Stores purchase order to a supplier (EDI 850 equivalent)",
+      "fields": [
+        { "name": "purchaseOrderNumber", "type": "string", "description": "Unique Ross Stores PO number", "required": true },
+        { "name": "orderDate", "type": "date", "description": "Date PO was issued", "required": true },
+        { "name": "cancelDate", "type": "date", "description": "Date after which delivery is unacceptable" },
+        { "name": "vendorNumber", "type": "string", "description": "Ross-assigned vendor ID", "required": true },
+        { "name": "departmentNumber", "type": "string", "description": "Ross merchandise department code" },
+        { "name": "shipWindow", "type": "object", "description": "Earliest and latest acceptable ship dates" },
+        { "name": "shipToAddress", "type": "object", "description": "Destination address (distribution center)" },
+        { "name": "lineItems", "type": "array", "description": "Ordered merchandise line items", "required": true },
+        { "name": "totalUnits", "type": "integer", "description": "Sum of ordered quantities" },
+        { "name": "totalCost", "type": "number", "description": "Total PO cost value in USD" },
+        { "name": "notes", "type": "string", "description": "Special instructions to vendor" }
+      ]
+    },
+    {
+      "name": "lineItem",
+      "type": "object",
+      "description": "A single merchandise item on a purchase order or ASN",
+      "fields": [
+        { "name": "lineNumber", "type": "integer", "description": "Sequential line number", "required": true },
+        { "name": "upc", "type": "string", "description": "UPC-A or EAN-13 barcode", "required": true },
+        { "name": "vendorStyleNumber", "type": "string", "description": "Vendor's internal SKU" },
+        { "name": "description", "type": "string", "description": "Item description" },
+        { "name": "quantity", "type": "integer", "description": "Ordered or shipped quantity", "required": true },
+        { "name": "unitCost", "type": "number", "description": "Cost per unit in USD", "required": true },
+        { "name": "retailPrice", "type": "number", "description": "Suggested retail price" },
+        { "name": "department", "type": "string", "description": "Ross department code" },
+        { "name": "color", "type": "string", "description": "Color description" },
+        { "name": "size", "type": "string", "description": "Size code" }
+      ]
+    },
+    {
+      "name": "advanceShipNotice",
+      "type": "object",
+      "description": "Supplier advance ship notice (ASN) to Ross Stores (EDI 856 equivalent)",
+      "fields": [
+        { "name": "asnNumber", "type": "string", "description": "Supplier-assigned ASN number", "required": true },
+        { "name": "shipDate", "type": "date", "description": "Date merchandise shipped", "required": true },
+        { "name": "estimatedArrivalDate", "type": "date", "description": "Expected arrival at distribution center" },
+        { "name": "vendorNumber", "type": "string", "description": "Ross-assigned vendor ID" },
+        { "name": "purchaseOrderNumbers", "type": "array", "description": "PO numbers in this shipment", "required": true },
+        { "name": "carrierCode", "type": "string", "description": "SCAC carrier code" },
+        { "name": "trackingNumber", "type": "string", "description": "Carrier tracking or PRO number" },
+        { "name": "packages", "type": "array", "description": "Carton-level detail with contents" }
+      ]
+    }
+  ]
+}

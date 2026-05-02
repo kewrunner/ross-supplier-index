@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corporate.rossstores.com/schemas/supplier.json",
+  "title": "Ross Stores Supplier Integration Schema",
+  "description": "Schema for Ross Stores supplier and vendor data integration, covering purchase orders, advance ship notices, invoices, and item master data used in EDI and API-based supplier integration.",
+  "type": "object",
+  "$defs": {
+    "Address": {
+      "type": "object",
+      "title": "Address",
+      "properties": {
+        "name": { "type": "string", "description": "Company or location name" },
+        "address1": { "type": "string", "description": "Street address line 1" },
+        "address2": { "type": "string", "description": "Street address line 2" },
+        "city": { "type": "string", "description": "City" },
+        "state": { "type": "string", "description": "State or province code" },
+        "postalCode": { "type": "string", "description": "ZIP or postal code" },
+        "country": { "type": "string", "description": "ISO 3166-1 alpha-2 country code" }
+      }
+    },
+    "LineItem": {
+      "type": "object",
+      "title": "LineItem",
+      "description": "A single merchandise line on a purchase order or invoice",
+      "required": ["lineNumber", "upc", "quantity", "unitCost"],
+      "properties": {
+        "lineNumber": {
+          "type": "integer",
+          "description": "Sequential line number within the document"
+        },
+        "upc": {
+          "type": "string",
+          "description": "Universal Product Code (UPC-A or EAN-13) identifying the item",
+          "pattern": "^[0-9]{12,13}$"
+        },
+        "vendorStyleNumber": {
+          "type": "string",
+          "description": "Vendor's internal style or SKU number"
+        },
+        "description": {
+          "type": "string",
+          "description": "Item description"
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Ordered quantity",
+          "minimum": 1
+        },
+        "unitCost": {
+          "type": "number",
+          "description": "Cost per unit in USD",
+          "minimum": 0
+        },
+        "retailPrice": {
+          "type": "number",
+          "description": "Suggested retail price in USD",
+          "minimum": 0
+        },
+        "department": {
+          "type": "string",
+          "description": "Ross merchandise department code"
+        },
+        "color": {
+          "type": "string",
+          "description": "Color description"
+        },
+        "size": {
+          "type": "string",
+          "description": "Size code or description"
+        }
+      }
+    },
+    "PurchaseOrder": {
+      "type": "object",
+      "title": "PurchaseOrder",
+      "description": "A Ross Stores purchase order to a supplier (EDI 850 equivalent)",
+      "required": ["purchaseOrderNumber", "orderDate", "vendorNumber", "shipToAddress", "lineItems"],
+      "properties": {
+        "purchaseOrderNumber": {
+          "type": "string",
+          "description": "Unique Ross Stores purchase order number"
+        },
+        "orderDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the purchase order was issued"
+        },
+        "cancelDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date after which delivery is no longer acceptable"
+        },
+        "vendorNumber": {
+          "type": "string",
+          "description": "Ross-assigned vendor identification number"
+        },
+        "departmentNumber": {
+          "type": "string",
+          "description": "Ross merchandise department number"
+        },
+        "shipWindow": {
+          "type": "object",
+          "description": "Acceptable ship date range",
+          "properties": {
+            "earliest": { "type": "string", "format": "date" },
+            "latest": { "type": "string", "format": "date" }
+          }
+        },
+        "shipToAddress": { "$ref": "#/$defs/Address" },
+        "billToAddress": { "$ref": "#/$defs/Address" },
+        "lineItems": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/LineItem" },
+          "minItems": 1
+        },
+        "totalUnits": {
+          "type": "integer",
+          "description": "Total unit quantity across all line items"
+        },
+        "totalCost": {
+          "type": "number",
+          "description": "Total cost value of the purchase order in USD"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Special instructions or notes to the vendor"
+        }
+      }
+    },
+    "AdvanceShipNotice": {
+      "type": "object",
+      "title": "AdvanceShipNotice",
+      "description": "A supplier advance ship notice (ASN) to Ross Stores (EDI 856 equivalent)",
+      "required": ["asnNumber", "shipDate", "purchaseOrderNumbers", "packages"],
+      "properties": {
+        "asnNumber": {
+          "type": "string",
+          "description": "Unique ASN number assigned by the supplier"
+        },
+        "shipDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Date merchandise was shipped"
+        },
+        "estimatedArrivalDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Estimated arrival date at Ross distribution center"
+        },
+        "vendorNumber": {
+          "type": "string",
+          "description": "Ross-assigned vendor identification number"
+        },
+        "purchaseOrderNumbers": {
+          "type": "array",
+          "description": "Purchase order numbers included in this shipment",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "carrierCode": {
+          "type": "string",
+          "description": "SCAC carrier code for the shipping carrier"
+        },
+        "trackingNumber": {
+          "type": "string",
+          "description": "Carrier tracking number or PRO number"
+        },
+        "packages": {
+          "type": "array",
+          "description": "List of packages/cartons in the shipment",
+          "items": {
+            "type": "object",
+            "properties": {
+              "packageNumber": { "type": "string" },
+              "weight": { "type": "number" },
+              "contents": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/LineItem" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "purchaseOrders": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/PurchaseOrder" }
+    },
+    "advanceShipNotices": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/AdvanceShipNotice" }
+    }
+  }
+}

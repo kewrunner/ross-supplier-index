@@ -1,0 +1,69 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ross": "https://corporate.rossstores.com/vocab/",
+    "schema": "https://schema.org/",
+    "gs1": "https://www.gs1.org/voc/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "RossStores": {
+      "@id": "ross:RossStores",
+      "@type": "schema:Corporation",
+      "@context": {
+        "name": { "@id": "schema:name" },
+        "description": { "@id": "schema:description" },
+        "url": { "@id": "schema:url" },
+        "tickerSymbol": { "@id": "schema:tickerSymbol" },
+        "numberOfLocations": { "@id": "ross:numberOfLocations" },
+        "retailBanners": { "@id": "ross:retailBanners" }
+      }
+    },
+
+    "Store": {
+      "@id": "ross:Store",
+      "@type": "schema:Store",
+      "@context": {
+        "name": { "@id": "schema:name" },
+        "banner": { "@id": "ross:banner" },
+        "address": { "@id": "schema:address" },
+        "storeNumber": { "@id": "ross:storeNumber" }
+      }
+    },
+
+    "SupplierOrder": {
+      "@id": "ross:SupplierOrder",
+      "@type": "schema:Order",
+      "@context": {
+        "orderNumber": { "@id": "schema:orderNumber" },
+        "supplier": { "@id": "schema:seller" },
+        "orderDate": { "@id": "schema:orderDate" },
+        "lineItems": { "@id": "schema:orderedItem" },
+        "totalAmount": { "@id": "schema:price" }
+      }
+    },
+
+    "MerchandiseItem": {
+      "@id": "ross:MerchandiseItem",
+      "@type": "schema:Product",
+      "@context": {
+        "upc": { "@id": "gs1:gtin" },
+        "description": { "@id": "schema:description" },
+        "brand": { "@id": "schema:brand" },
+        "category": { "@id": "schema:category" },
+        "unitCost": { "@id": "schema:price" }
+      }
+    },
+
+    "AdvanceShipNotice": {
+      "@id": "ross:AdvanceShipNotice",
+      "@type": "schema:ParcelDelivery",
+      "@context": {
+        "shipmentId": { "@id": "schema:trackingNumber" },
+        "purchaseOrderNumber": { "@id": "ross:purchaseOrderNumber" },
+        "shipDate": { "@id": "schema:expectedArrivalFrom" },
+        "contents": { "@id": "schema:hasDeliveryMethod" }
+      }
+    }
+  }
+}

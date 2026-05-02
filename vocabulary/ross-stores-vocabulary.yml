@@ -1,0 +1,116 @@
+name: Ross Stores Vocabulary
+description: >-
+  Vocabulary and taxonomy for Ross Stores off-price retail operations, covering
+  merchandise sourcing, supply chain, distribution, store operations, and
+  technology integration concepts used across the Ross Dress for Less and
+  dd's DISCOUNTS retail banners.
+created: '2026-05-02'
+modified: '2026-05-02'
+terms:
+  - term: Off-Price Retail
+    definition: >-
+      A retail business model where merchandise is acquired and sold at
+      significant discounts (20-60%) below department and specialty store
+      prices by purchasing opportunistically from manufacturers, department
+      stores, and other retailers with excess inventory.
+    tags:
+      - Business Model
+      - Core
+  - term: Ross Dress for Less
+    definition: >-
+      Ross Stores' primary retail banner operating over 1,700 stores across
+      43 states, DC, and Guam, offering name-brand apparel, accessories,
+      footwear, and home fashions at 20-60% below department store prices.
+    tags:
+      - Retail Banner
+      - Core
+  - term: dd's DISCOUNTS
+    definition: >-
+      Ross Stores' secondary retail banner with 320+ stores serving
+      moderate-income customers with discounted apparel, footwear, and
+      home merchandise targeting a different demographic than Ross Dress
+      for Less.
+    tags:
+      - Retail Banner
+  - term: Opportunistic Buying
+    definition: >-
+      Ross Stores' merchandising strategy of purchasing in-season,
+      name-brand goods from vendors, manufacturers, and retailers with
+      excess, canceled, or closeout inventory to achieve deep discounts
+      not available through traditional wholesale channels.
+    tags:
+      - Merchandising
+      - Business Model
+  - term: ASN
+    definition: >-
+      Advance Ship Notice — an EDI transaction set (856) sent by a supplier
+      to Ross Stores before a shipment arrives, containing details of the
+      packed contents to enable receiving automation at distribution centers.
+    tags:
+      - EDI
+      - Supply Chain
+  - term: Purchase Order
+    definition: >-
+      A commercial document (EDI 850) issued by Ross Stores to a supplier
+      authorizing the purchase of specific merchandise at agreed prices and
+      quantities.
+    tags:
+      - EDI
+      - Procurement
+  - term: Distribution Center
+    definition: >-
+      A Ross Stores facility where merchandise received from suppliers is
+      processed, sorted, and cross-docked to individual stores. Ross operates
+      distribution centers with automated sorting and conveyance systems.
+    tags:
+      - Supply Chain
+      - Logistics
+  - term: Opportunistic Purchase
+    definition: >-
+      An unplanned merchandise acquisition made by Ross buyers when an
+      attractive deal presents itself, as distinct from planned programmatic
+      buying. This requires flexible supplier integration capable of handling
+      diverse and non-standard purchase orders.
+    tags:
+      - Merchandising
+  - term: Pack-and-Hold
+    definition: >-
+      A Ross merchandising strategy of purchasing out-of-season merchandise
+      at deep discounts and holding it in distribution until the appropriate
+      selling season, enabling opportunistic buying year-round.
+    tags:
+      - Merchandising
+      - Inventory
+  - term: EDI
+    definition: >-
+      Electronic Data Interchange — the standardized electronic communication
+      of business documents between trading partners using industry standard
+      formats (X12, EDIFACT). Ross Stores uses EDI for purchase orders (850),
+      ASNs (856), invoices (810), and other supplier transactions.
+    tags:
+      - Technology
+      - Supply Chain
+  - term: Merchandise Analyst
+    definition: >-
+      A Ross Stores buyer or planning professional responsible for identifying,
+      negotiating, and managing opportunistic merchandise purchases within a
+      specific category, working within Ross's decentralized buying structure.
+    tags:
+      - Operations
+  - term: Inventory Allocation
+    definition: >-
+      The process of distributing received merchandise across Ross stores based
+      on store demographics, local demand signals, and inventory optimization
+      algorithms. Ross uses AI-driven allocation to maximize sell-through.
+    tags:
+      - Inventory
+      - Technology
+  - term: Capital Expenditure Program
+    definition: >-
+      Ross Stores' planned investment of approximately $1.1 billion in fiscal
+      2026 across new store openings, distribution center expansion and
+      automation, and technology infrastructure including supply chain systems
+      and store technology.
+    tags:
+      - Finance
+      - Strategy
