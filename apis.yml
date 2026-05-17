@@ -71,7 +71,7 @@ common:
     url: https://partners.rossstores.com/
   - type: Vocabulary
     url: vocabulary/ross-stores-vocabulary.yml
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/ross-stores-context.jsonld
   - type: JSONSchema
     url: json-schema/ross-stores-supplier-schema.json
