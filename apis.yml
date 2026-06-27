@@ -63,7 +63,7 @@ apis:
 common:
   - type: Website
     url: https://www.rossstores.com
-  - type: Corporate Website
+  - type: Website
     url: https://corporate.rossstores.com/
   - type: Investor Relations
     url: https://investors.rossstores.com/
