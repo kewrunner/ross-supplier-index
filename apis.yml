@@ -1,4 +1,17 @@
 aid: ross-stores
+accessModel:
+  pricing: enterprise
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise
+  confidence: medium
+  source:
+    - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ross-stores.png
 name: Ross Stores
 description: >-
   Ross Stores, Inc. (NASDAQ: ROST) is the largest off-price apparel and home
@@ -19,28 +32,9 @@ tags:
   - Retail
   - Supply Chain
 created: '2025-01-01'
-modified: '2026-05-02'
+modified: '2026-07-25'
 specificationVersion: '0.19'
 apis:
-  - aid: ross-stores:ross-stores-supplier-api
-    name: Ross Stores Supplier Integration
-    description: >-
-      Ross Stores provides EDI-based and API-based integration capabilities for
-      suppliers and vendors through its Partners portal. Suppliers can submit
-      purchase orders, advance ship notices (ASN), invoices, and item master
-      data through standard retail EDI transaction sets (850, 856, 810) and
-      modern API integrations to support high-velocity opportunistic buying
-      at scale.
-    humanURL: https://partners.rossstores.com/
-    properties:
-      - type: Portal
-        url: https://partners.rossstores.com/
-    tags:
-      - EDI
-      - Retail
-      - Supplier Portal
-      - Supply Chain
-      - Vendor Management
   - aid: ross-stores:ross-stores-supply-chain-api
     name: Ross Stores Supply Chain Technology
     description: >-

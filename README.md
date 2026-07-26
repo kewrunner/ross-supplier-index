@@ -20,10 +20,6 @@ Ross Stores, Inc. (NASDAQ: ROST) is the largest off-price apparel and home fashi
 
 ## APIs
 
-### Ross Stores Supplier Integration
-Ross Stores provides EDI-based and API-based integration capabilities for suppliers and vendors through its Partners portal. Suppliers can submit purchase orders, advance ship notices (ASN), invoices, and item master data through standard retail EDI transaction sets.
-
-**Human URL:** [https://partners.rossstores.com/](https://partners.rossstores.com/)
 
 #### Tags:
 
