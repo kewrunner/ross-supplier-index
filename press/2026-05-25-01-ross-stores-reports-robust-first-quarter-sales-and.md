@@ -1,7 +1,9 @@
 ---
 title: Ross Stores Reports Robust First Quarter Sales and ...
 url: https://www.prnewswire.com/news-releases/ross-stores-reports-robust-first-quarter-sales-and-earnings-results-significantly-exceeding-guidance-302779470.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ross Stores" press release artificial intelligence'
 position: 1
 source: serpapi-google

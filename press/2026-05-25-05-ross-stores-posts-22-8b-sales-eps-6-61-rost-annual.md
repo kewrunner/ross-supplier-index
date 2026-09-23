@@ -1,7 +1,9 @@
 ---
 title: Ross Stores posts $22.8B sales, EPS $6.61 | ROST Annual ...
 url: https://www.stocktitan.net/sec-filings/ROST/10-k-ross-stores-inc-files-annual-report-fa6847171353.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Ross Stores" press release artificial intelligence'
 position: 5
 source: serpapi-google
