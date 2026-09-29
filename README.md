@@ -125,3 +125,17 @@ Ross Stores operates AI-driven inventory allocation, distribution center automat
 **FN:** Kin Lane
 
 **Email:** kin@apievangelist.com
+
+## Supplier index MVP
+
+The [`supplier-indexer`](supplier-indexer/) directory contains a Next.js website for browsing the public Ross Stores supplier and ecosystem profile. It includes supplier search and filters, supplier detail pages, API profiles, source provenance, and an editor draft form.
+
+This application is a metadata index only. It does not provide live inventory, transactions, authentication, or an official Ross Stores API.
+
+To run it locally:
+
+```bash
+cd supplier-indexer
+npm install
+npm run dev
+```
